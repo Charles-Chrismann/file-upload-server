@@ -4,7 +4,7 @@ import express from 'express'
 import multer from 'multer'
 import { generateSecureRandomString, getFormattedTimestamp } from './utils';
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const upload = multer()
 
 app.set("view engine", "ejs");
