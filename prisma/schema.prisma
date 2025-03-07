@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model File {
+  id Int @id @default(autoincrement())
+
+  slug String @unique
+  path String
+
+  consultations Consultation[]
+}
+
+model Consultation {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  ip String
+
+  file   File @relation(fields: [fileId], references: [id])
+  fileId Int
+}

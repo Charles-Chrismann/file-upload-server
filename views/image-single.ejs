@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      overflow: auto;
+      display: grid;
+      grid-template-rows: 72px 1fr;
+    }
+
+    header {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-bottom: solid 2px lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+
+    header > div {
+      height: 64px;
+      width: 64px;
+      border-radius: 9999px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    header > div > img {
+      position: absolute;
+      width: 96px;
+      aspect-ratio: 1;
+    }
+
+    h2 > span {
+      color: #1798ee;
+    }
+
+    main {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      padding: .5rem;
+    }
+
+    img.img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <img src="logo.webp" alt="">
+    </div>
+    <h2>lataverne.<span>live</span></h2>
+  </header>
+  <main>
+    <img class="img" src="<%= file.path %>" alt="">
+  </main>
+</body>
+</html>

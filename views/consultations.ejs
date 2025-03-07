@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      overflow: auto;
+      display: grid;
+      grid-template-rows: 72px 1fr;
+    }
+
+    header {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-bottom: solid 2px lightgray;
+    }
+
+    main {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      padding: .5rem;
+    }
+    ul {
+
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.webp" alt="">
+  </header>
+  <main>
+    <ul>
+      <% consultations.forEach((c) => { %>
+        <li>
+          <span>
+            <%= new Date(c.createdAt).getDate() %>/<%= new Date(c.createdAt).getMonth() + 1 %>/<%= new Date(c.createdAt).getFullYear() %> <%= new Date(c.createdAt).getHours() %>:<%= new Date(c.createdAt).getMinutes() %>:<%= new Date(c.createdAt).getSeconds() %>
+          </span>
+          <span><%= c.file.slug %></span>
+          <span><%= c.ip %></span>
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>
