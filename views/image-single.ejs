@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Fichier partagé</title>
+
+  <meta property="og:url" content="https://file.lataverne.live" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="lataverne.live - Partagez vos fichiers en toute sécurité" />
+  <meta property="og:description"
+    content="lataverne.live est une organisation à but non lucratif, qui tente de donner l'accès à n'importe qui, à un espace de stockage et de partage de fichiers" />
+  <meta property="og:image"
+    content="https://file.lataverne.live/og.webp" />
+
   <style>
     * {
       margin: 0;
@@ -31,7 +41,7 @@
       gap: .5rem;
     }
 
-    header > div {
+    header>div {
       height: 64px;
       width: 64px;
       border-radius: 9999px;
@@ -41,13 +51,13 @@
       place-items: center;
     }
 
-    header > div > img {
+    header>div>img {
       position: absolute;
       width: 96px;
       aspect-ratio: 1;
     }
 
-    h2 > span {
+    h2>span {
       color: #1798ee;
     }
 
@@ -65,6 +75,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div>
@@ -76,4 +87,5 @@
     <img class="img" src="<%= file.path %>" alt="">
   </main>
 </body>
+
 </html>
